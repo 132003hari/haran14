@@ -4,6 +4,10 @@ pipeline {
         DOCKER_IMAGE_VERSION = "1.1.${BUILD_ID}"
         DOCKER_IMAGE_NAME = "haribala132003/user"
     }
+    options {
+  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '10', numToKeepStr: '10')
+}
+
 
     stages {
         stage('Build') {
