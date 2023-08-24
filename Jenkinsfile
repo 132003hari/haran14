@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         DOCKER_IMAGE_VERSION = "1.1.${BUILD_ID}"
-        DOCKER_IMAGE_NAME = "haribalala/user"
+        DOCKER_IMAGE_NAME = "haribala/user"
     }
 
     stages {
