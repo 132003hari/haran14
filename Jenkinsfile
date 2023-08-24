@@ -48,6 +48,14 @@ pipeline {
                         }
                     }
                 }
+         stage('Pull Docker Image') {
+            steps {
+                script {
+                           sh "docker login -u haribala132003 -p haran/hari"
+                            sh "docker pull ${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_VERSION}"
+                    }
+                }
+            }
 
     }
 
