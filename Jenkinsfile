@@ -7,6 +7,13 @@ pipeline {
     options {
   buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5')
 }
+    stages {
+        stage('Cleanup Docker Images') {
+            steps {
+                sh 'docker system prune -a '
+            }
+        }
+    }
 
 
     stages {
