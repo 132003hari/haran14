@@ -67,6 +67,10 @@ pipeline {
                 }
             }
         }
+       
+
+    }
+    post {
         success {
             emailext (
                 subject: "Pipeline Successful: ${currentBuild.fullDisplayName}",
@@ -74,8 +78,6 @@ pipeline {
                 recipientProviders: [[$class: 'DevelopersRecipientProvider']],
             )
         }
-    
-
     }
 
 }
