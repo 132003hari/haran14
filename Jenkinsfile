@@ -70,13 +70,4 @@ pipeline {
        
 
     }
-    post {
-        success {
-            emailext (
-        
-                                recipientProviders: [[$class: 'DevelopersRecipientProvider']],
-            )
-        }
-    }
-
-}
+   )
