@@ -3,6 +3,7 @@ pipeline {
     environment {
         DOCKER_IMAGE_VERSION = "1.1.${BUILD_ID}"
         DOCKER_IMAGE_NAME = "haribala132003/users"
+        URL="localhost:8080"
     }
     options {
   buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5')
@@ -79,7 +80,8 @@ pipeline {
   
         }
         always{
-            slackSend channel: 'build', message: 'project asp build ${env. DOCKER_IMAGE_NAME}'
+            slackSend channel: 'build', message: 'project asp build ${DOCKER_IMAGE_NAME}'
+            slackSend channel: 'build', message: 'Visit the url to check my build ${URL}'
         }
     }
 }
