@@ -67,7 +67,15 @@ pipeline {
                 }
             }
         }
-    
+    post {
+        success {
+            emailext (
+                subject: "Pipeline Successful: ${currentBuild.fullDisplayName}",
+                body: "The pipeline ${currentBuild.fullDisplayName} has succeeded.",
+                recipientProviders: [[$class: 'DevelopersRecipientProvider']],
+            )
+        }
+    }
 
     }
 
