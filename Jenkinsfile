@@ -71,7 +71,7 @@ pipeline {
 
     }
     post{
-        sucess{
+        success{
             emailext body: 'email sent from jenkins', subject: 'build suceed', to: 'haribalakarpagam@gmail.com '
         }
     }
