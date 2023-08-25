@@ -79,7 +79,7 @@ pipeline {
   
         }
         always{
-            slackSend channel: 'build', message: 'project asp build ${env.BUILD_URL}'
+            slackSend channel: 'build', message: 'project asp build ${env. DOCKER_IMAGE_NAME}'
         }
     }
 }
