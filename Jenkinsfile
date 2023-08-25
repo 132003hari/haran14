@@ -78,6 +78,9 @@ pipeline {
           emailext body: 'email sent from jenkins', subject: 'build failed', to: 'haribalakarpagam@gmail.com '
   
         }
+        always{
+            slackSend channel: 'build', message: 'project asp build'
+        }
     }
 }
 
