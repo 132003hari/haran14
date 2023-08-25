@@ -73,9 +73,8 @@ pipeline {
     post {
         success {
             emailext (
-                subject: "Pipeline Successful: ${DOCKER_IMAGE_NAME.fullDisplayName}",
-                body: "The pipeline ${DOCKER_IMAGE_NAME.fullDisplayName} has succeeded.",
-                recipientProviders: [[$class: 'DevelopersRecipientProvider']],
+        
+                                recipientProviders: [[$class: 'DevelopersRecipientProvider']],
             )
         }
     }
