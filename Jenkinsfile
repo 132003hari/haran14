@@ -3,7 +3,6 @@ pipeline {
     environment {
         DOCKER_IMAGE_VERSION = "1.1.${BUILD_ID}"
         DOCKER_IMAGE_NAME = "haribala132003/users"
-        URL="localhost:8080"
     }
     options {
   buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5')
