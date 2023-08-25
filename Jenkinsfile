@@ -25,7 +25,7 @@ pipeline {
             steps {
                 echo 'Testing..'
                 sh '''
-                echo Testing Successfull.."
+                echo "Testing Successfull.."
                 '''
             }
         }
