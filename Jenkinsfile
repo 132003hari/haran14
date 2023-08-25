@@ -79,7 +79,7 @@ pipeline {
   
         }
         always{
-            slackSend channel: 'build', message: 'project asp build'
+            slackSend channel: 'build', message: 'project asp build ${BUILD_URL}'
         }
     }
 }
